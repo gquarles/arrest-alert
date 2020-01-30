@@ -16,5 +16,8 @@ jobs:
       with:
         flutter-version: '1.9.1+hotfix.6'
     - run: flutter pub get
-    - run: flutter build apk
+    - name: build apk
+      uses: steebchen/flutter@v1.0.0
+      with:
+        args: build apk --release
 
