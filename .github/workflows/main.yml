@@ -9,9 +9,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - uses: actions/download-artifact@v1.0.0
-      with:
-        name: apktest
     - uses: actions/setup-java@v1
       with:
         java-version: '12.x'
@@ -20,3 +17,6 @@ jobs:
         flutter-version: '1.9.1+hotfix.6'
     - run: flutter pub get
     - run: flutter build apk
+    - uses: actions/download-artifact@v1.0.0
+      with:
+        name: "build/app/outputs/apk/debug/*.apk"
